@@ -1,0 +1,821 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Julia Korbi &mdash; GTM Systems &amp; Marketing Operations</title>
+<meta name="description" content="B2B Marketing Operations leader &mdash; attribution engines, lifecycle architecture, lead scoring, and AI-driven automation across HubSpot and Salesforce. Case studies, stack, and contact.">
+<meta property="og:title" content="Julia Korbi &mdash; GTM Systems &amp; Marketing Operations">
+<meta property="og:description" content="I build the infrastructure between a click and a closed deal. Attribution, lifecycle, lead scoring, SLA enforcement, and AI-driven automation &mdash; with the mechanism shown, not just the result.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="portfolio-preview.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="portfolio-preview.png">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+  /* ============ TOKENS ============ */
+  :root{
+    --bg:#F5F7FB;
+    --surface:#FFFFFF;
+    --surface-2:#EDF1F9;
+    --border:#D9DFED;
+    --border-strong:#C1C9DE;
+    --text:#10182B;
+    --text-muted:#4B5570;
+    --text-faint:#7C87A3;
+    --amber:#A4670A;
+    --amber-soft:#FBEBD0;
+    --cyan:#0C7383;
+    --cyan-soft:#DEF2F4;
+    --violet:#6446C4;
+    --violet-soft:#ECE6FB;
+    --good:#1B7A50;
+    --good-soft:#DDF1E7;
+    --crit:#B33A3A;
+    --shadow: 0 1px 2px rgba(16,24,43,.04), 0 8px 24px -12px rgba(16,24,43,.12);
+    --radius-s:8px;
+    --radius-m:14px;
+    --radius-l:22px;
+    --maxw:1180px;
+    --font-display:'Archivo',system-ui,sans-serif;
+    --font-body:'IBM Plex Sans',system-ui,sans-serif;
+    --font-mono:'IBM Plex Mono',ui-monospace,'SF Mono',monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0A0F1D; --surface:#121A2E; --surface-2:#0E1526;
+      --border:#243152; --border-strong:#324268;
+      --text:#E9EDF6; --text-muted:#9AA6C7; --text-faint:#6C7796;
+      --amber:#E8A73F; --amber-soft:rgba(232,167,63,.14);
+      --cyan:#5FCBDA; --cyan-soft:rgba(95,203,218,.13);
+      --violet:#A48CF2; --violet-soft:rgba(164,140,242,.14);
+      --good:#48CB8E; --good-soft:rgba(72,203,142,.13); --crit:#F0776F;
+      --shadow: 0 1px 2px rgba(0,0,0,.3), 0 12px 32px -14px rgba(0,0,0,.55);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0A0F1D; --surface:#121A2E; --surface-2:#0E1526;
+    --border:#243152; --border-strong:#324268;
+    --text:#E9EDF6; --text-muted:#9AA6C7; --text-faint:#6C7796;
+    --amber:#E8A73F; --amber-soft:rgba(232,167,63,.14);
+    --cyan:#5FCBDA; --cyan-soft:rgba(95,203,218,.13);
+    --violet:#A48CF2; --violet-soft:rgba(164,140,242,.14);
+    --good:#48CB8E; --good-soft:rgba(72,203,142,.13); --crit:#F0776F;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 12px 32px -14px rgba(0,0,0,.55);
+  }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--bg); color:var(--text); font-family:var(--font-body);
+    font-size:16px; line-height:1.55; -webkit-font-smoothing:antialiased; padding-inline:20px;
+  }
+  img{max-width:100%;}
+  [hidden]{display:none!important;}
+  a{color:inherit;}
+  h1,h2,h3,h4,h5{font-family:var(--font-display);text-wrap:balance;margin:0;letter-spacing:-.01em;}
+  p{margin:0;}
+  .container{max-width:var(--maxw);margin-inline:auto;}
+  ::selection{background:var(--amber-soft);color:var(--text);}
+
+  .grid-bg{
+    position:fixed; inset:0; z-index:-1; pointer-events:none;
+    background-image:
+      linear-gradient(var(--border) 1px, transparent 1px),
+      linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    background-size:56px 56px; opacity:.35;
+    mask-image:radial-gradient(ellipse 90% 60% at 50% 0%, black 40%, transparent 85%);
+  }
+
+  .eyebrow{
+    font-family:var(--font-mono); font-size:12.5px; letter-spacing:.11em; text-transform:uppercase;
+    color:var(--text-faint); display:inline-flex; align-items:center; gap:8px;
+  }
+  .eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--amber);flex:none;}
+
+  .pill{
+    font-family:var(--font-mono); font-size:11.5px; padding:3px 9px; border-radius:99px;
+    border:1px solid var(--border-strong); color:var(--text-muted); white-space:nowrap;
+  }
+  .pill.amber{color:var(--amber);border-color:var(--amber);background:var(--amber-soft);}
+  .pill.cyan{color:var(--cyan);border-color:var(--cyan);background:var(--cyan-soft);}
+  .pill.violet{color:var(--violet);border-color:var(--violet);background:var(--violet-soft);}
+  .pill.good{color:var(--good);border-color:var(--good);}
+
+  /* ============ NAV ============ */
+  header.top{
+    position:sticky; top:env(safe-area-inset-top,0px); z-index:50;
+    background:color-mix(in srgb, var(--bg) 82%, transparent);
+    backdrop-filter:blur(10px) saturate(1.1); border-bottom:1px solid var(--border);
+  }
+  .navwrap{max-width:var(--maxw); margin-inline:auto; display:flex; align-items:center; justify-content:space-between; padding:14px 0; gap:16px;}
+  .brand{font-family:var(--font-display); font-weight:900; font-size:17px; letter-spacing:-.01em; display:flex; align-items:center; gap:9px;}
+  .brand .mark{width:22px;height:22px;border-radius:6px;background:linear-gradient(140deg, var(--amber), var(--cyan));display:inline-block;flex:none;}
+  nav.links{display:flex; gap:22px; overflow-x:auto; scrollbar-width:none; font-family:var(--font-mono); font-size:12.5px; letter-spacing:.06em; text-transform:uppercase;}
+  nav.links::-webkit-scrollbar{display:none;}
+  nav.links a{color:var(--text-muted); text-decoration:none; white-space:nowrap; padding:4px 2px; border-bottom:2px solid transparent;}
+  nav.links a:hover, nav.links a:focus-visible{color:var(--text); border-color:var(--amber);}
+  .navcta{font-family:var(--font-mono); font-size:12.5px; flex:none; border:1px solid var(--border-strong); padding:7px 13px; border-radius:8px; text-decoration:none; color:var(--text); white-space:nowrap;}
+  .navcta:hover{border-color:var(--amber); color:var(--amber);}
+
+  /* ============ HERO ============ */
+  .hero{max-width:var(--maxw); margin-inline:auto; padding-top:56px; padding-bottom:56px; display:grid; grid-template-columns:1.1fr .9fr; gap:48px; align-items:start;}
+  .hero-diagram{margin-top:6px;}
+  .hero h1{font-size:clamp(2.1rem, 4.4vw, 3.35rem); line-height:1.06; margin-top:18px;}
+  .hero h1 .hl{color:var(--amber);}
+  .hero p.lede{font-family:var(--font-body); font-size:17px; color:var(--text-muted); max-width:52ch; margin-top:20px;}
+  .hero-ctas{display:flex; gap:12px; margin-top:28px; flex-wrap:wrap;}
+  .btn{font-family:var(--font-mono); font-size:13px; text-decoration:none; padding:11px 18px; border-radius:9px; display:inline-flex; align-items:center; gap:8px; border:1px solid var(--border-strong); color:var(--text); transition:transform .15s ease, border-color .15s ease;}
+  .btn.primary{background:var(--text); color:var(--bg); border-color:var(--text);}
+  .btn:hover{transform:translateY(-1px); border-color:var(--amber);}
+  .btn.primary:hover{border-color:var(--text);}
+
+  .stat-strip{display:grid; grid-template-columns:repeat(5,1fr); gap:1px; margin-top:44px; background:var(--border); border:1px solid var(--border); border-radius:var(--radius-m); overflow:hidden;}
+  .stat{background:var(--surface); padding:16px 14px;}
+  .stat .n{font-family:var(--font-display); font-weight:800; font-size:clamp(1.2rem,2.4vw,1.55rem); color:var(--text);}
+  .stat .n .u{color:var(--amber);}
+  .stat .l{font-family:var(--font-mono); font-size:11px; color:var(--text-faint); text-transform:uppercase; letter-spacing:.04em; margin-top:4px;}
+
+  .hero-diagram{background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-l); padding:20px; box-shadow:var(--shadow);}
+
+  /* ============ SECTION SHELL ============ */
+  section{max-width:var(--maxw); margin-inline:auto; padding-block:60px; border-top:1px solid var(--border);}
+  .sec-head{display:flex; flex-direction:column; gap:7px; margin-bottom:30px;}
+  .sec-head h2{font-size:clamp(1.5rem,3vw,2.1rem);}
+  .sec-head .tag{font-family:var(--font-mono); font-size:13px; color:var(--text-faint); max-width:min(92ch, 100%);}
+
+  /* ============ ABOUT ============ */
+  .about-wrap{display:grid; grid-template-columns:150px 1fr; gap:20px; align-items:center; max-width:920px;}
+  .about-photo-col{flex:none;}
+  .about-photo{width:150px; height:150px; object-fit:cover; border-radius:var(--radius-l); border:1px solid var(--border); box-shadow:var(--shadow); display:block; background:var(--surface-2);}
+  .about-copy{max-width:750px;}
+  .about-copy p{color:var(--text-muted); margin-bottom:15px;}
+  .about-copy p:last-child{margin-bottom:0;}
+  .about-copy strong{color:var(--text); font-weight:600;}
+
+  /* ============ NARRATIVE INDENT (aligns prose paragraphs with About's text column) ============ */
+  .narrative-indent{max-width:920px;}
+
+  /* ============ EXPERIENCE ============ */
+  .exp-list{display:flex; flex-direction:column; gap:20px; margin-bottom:16px;}
+  .exp-row{display:grid; grid-template-columns:170px 1fr; gap:20px; padding-bottom:20px; border-bottom:1px solid var(--border);}
+  .exp-row:last-child{border-bottom:none; padding-bottom:0;}
+  .exp-when{font-family:var(--font-mono); font-size:12.5px; color:var(--text-faint); padding-top:3px;}
+  .exp-what h3{font-size:16.5px; margin-bottom:6px;}
+  .exp-what p{font-size:14.5px; color:var(--text-muted); line-height:1.55;}
+  .exp-more{display:inline-flex; align-items:center; gap:6px; font-family:var(--font-mono); font-size:13px; color:var(--cyan); text-decoration:none;}
+  .exp-more:hover{text-decoration:underline;}
+  @media (max-width:880px){ .exp-row{grid-template-columns:1fr; gap:6px;} }
+
+  /* ============ CAPABILITIES — compact row list ============ */
+  .caplist{display:grid; grid-template-columns:1fr 1fr; border:1px solid var(--border); border-radius:var(--radius-m); overflow:hidden; background:var(--surface);}
+  .caprow{display:flex; gap:12px; padding:15px 18px; border-bottom:1px solid var(--border); border-right:1px solid var(--border);}
+  .caprow:nth-child(even){border-right:none;}
+  .caprow .catag{font-family:var(--font-mono); font-size:10.5px; letter-spacing:.05em; flex:none; width:26px; padding-top:3px; color:var(--amber);}
+  .caprow h3{font-size:15.5px; margin-bottom:5px;}
+  .caprow p{font-size:14.5px; color:var(--text-muted); line-height:1.5;}
+
+  a:focus-visible, button:focus-visible{outline:2px solid var(--amber); outline-offset:2px;}
+
+  /* ============ CASE GROUPS ============ */
+  .case-group{margin-bottom:44px;}
+  .case-group:last-child{margin-bottom:0;}
+  .case-group-head{margin-bottom:18px;}
+  .case-group-head .eyebrow-sm{font-family:var(--font-mono); font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--text-faint);}
+  .case-group-head.amber .eyebrow-sm{color:var(--amber);}
+  .case-group-head.violet .eyebrow-sm{color:var(--violet);}
+  .case-group-head.cyan .eyebrow-sm{color:var(--cyan);}
+  .case-group-head.good .eyebrow-sm{color:var(--good);}
+  .case-group-head h3{font-size:1.1rem; margin-top:5px;}
+  .case-group-head p{font-size:13.5px; color:var(--text-faint); margin-top:5px; max-width:70ch;}
+  .case-grid{display:flex; flex-wrap:wrap; gap:18px;}
+
+  .card{width:min(360px, 100%); background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-l); padding:22px; display:flex; flex-direction:column; gap:14px; box-shadow:var(--shadow);}
+  .card .chead{display:flex; justify-content:space-between; align-items:flex-start; gap:10px;}
+  .card .ic-wrap{width:46px;height:46px; border-radius:11px; background:var(--surface-2); display:flex; align-items:center; justify-content:center; flex:none;}
+  .card h3{font-size:19px; margin-top:12px;}
+  .card .problem{font-size:15px; color:var(--text-muted); line-height:1.55;}
+  .card .ba{display:flex; align-items:center; gap:10px; font-family:var(--font-mono); font-size:12.5px; background:var(--surface-2); border-radius:var(--radius-s); padding:10px 12px;}
+  .card .ba .arrow{color:var(--text-faint);}
+  .card .ba b{color:var(--amber); font-weight:600;}
+  .card details{border-top:1px dashed var(--border); padding-top:12px;}
+  .card summary{list-style:none; cursor:pointer; font-family:var(--font-mono); font-size:12px; color:var(--cyan); display:flex; align-items:center; gap:6px; text-transform:uppercase; letter-spacing:.04em;}
+  .card summary::-webkit-details-marker{display:none;}
+  .card summary .chev{transition:transform .18s ease;}
+  .card details[open] summary .chev{transform:rotate(90deg);}
+  .card .detail-body{margin-top:12px; display:flex; flex-direction:column; gap:10px;}
+  .card .detail-body .d-row{font-size:14.5px; color:var(--text-muted); line-height:1.55;}
+  .card .detail-body .d-row b{font-family:var(--font-mono); font-size:11px; text-transform:uppercase; letter-spacing:.06em; color:var(--text-faint); display:block; margin-bottom:4px;}
+
+  /* ============ SCORING TABLE ============ */
+  .score-wrap{display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:8px;}
+  .score-card{background:var(--surface-2); border:1px solid var(--border); border-radius:var(--radius-m); padding:16px 18px;}
+  .score-card h4{font-size:12px; font-family:var(--font-mono); text-transform:uppercase; letter-spacing:.06em; color:var(--text-faint); margin-bottom:10px;}
+  .score-row{display:flex; justify-content:space-between; gap:10px; font-size:13.5px; padding:7px 0; border-bottom:1px solid var(--border);}
+  .score-row:last-child{border-bottom:none;}
+  .score-row .v{font-family:var(--font-mono); font-weight:600; flex:none;}
+  .score-row .v.pos{color:var(--good);}
+  .score-row .v.neg{color:var(--crit);}
+  .mql-bar{margin-top:14px; padding-top:14px; border-top:1px dashed var(--border); font-family:var(--font-mono); font-size:12px; color:var(--text-muted);}
+
+  /* ============ EMAIL GALLERY ============ */
+  .email-note{font-size:16px; color:var(--text-muted); max-width:min(88ch, 100%); margin-bottom:28px;}
+
+  /* skill flow diagram */
+  .skill-flow{display:flex; align-items:stretch; gap:10px; flex-wrap:wrap; margin-bottom:32px;}
+  .sf-step{flex:1 1 150px; display:flex; flex-direction:column; gap:6px; align-items:center; justify-content:center; text-align:center; border:1px solid var(--border-strong); border-radius:var(--radius-m); padding:14px 12px; background:var(--surface);}
+  .sf-step.sf-highlight{border-color:var(--violet); background:var(--violet-soft);}
+  .sf-step.sf-result{border-color:var(--good); background:var(--good-soft);}
+  .sf-eyebrow{font-family:var(--font-mono); font-size:9.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--text-faint);}
+  .sf-highlight .sf-eyebrow{color:var(--violet);}
+  .sf-result .sf-eyebrow{color:var(--good);}
+  .sf-label{font-family:var(--font-display); font-weight:700; font-size:13.5px; color:var(--text); line-height:1.3;}
+  .sf-highlight .sf-label{color:var(--violet);}
+  .sf-result .sf-label{color:var(--good);}
+  .sf-arrow{flex:none; align-self:center; color:var(--text-faint); font-size:18px; font-family:var(--font-mono);}
+  @media (max-width:640px){
+    .skill-flow{flex-direction:column;}
+    .sf-arrow{transform:rotate(90deg); align-self:center;}
+  }
+
+  .metrics-label{display:block; font-family:var(--font-mono); font-size:11px; text-transform:uppercase; letter-spacing:.06em; color:var(--text-faint); margin-bottom:10px;}
+  .email-metrics{display:flex; gap:14px; flex-wrap:wrap; margin-bottom:32px;}
+  .metrics-break{flex-basis:100%; width:0; height:0; margin:0; padding:0;}
+  .card .detail-body .email-metrics{margin-bottom:0; margin-top:2px; gap:8px;}
+  .card .pill{font-size:10.5px;}
+
+  /* ============ STACK ============ */
+  .stack-groups{display:grid; grid-template-columns:repeat(2,1fr); gap:16px;}
+  .stack-group{border:1px solid var(--border); border-radius:var(--radius-m); padding:18px; background:var(--surface);}
+  .stack-group h4{font-family:var(--font-mono); font-size:11.5px; text-transform:uppercase; letter-spacing:.06em; color:var(--text-faint); margin-bottom:12px;}
+  .chips{display:flex; flex-wrap:wrap; gap:8px;}
+  .chip{font-family:var(--font-mono); font-size:12.5px; padding:6px 10px; border-radius:7px; background:var(--surface-2); border:1px solid var(--border);}
+
+  /* ============ CONTACT / FOOTER ============ */
+  .contact-box{background:var(--text); color:var(--bg); border-radius:var(--radius-l); padding:48px; display:flex; justify-content:space-between; align-items:center; gap:24px; flex-wrap:wrap;}
+  .contact-box h2{color:var(--bg); font-size:clamp(1.5rem,3vw,2.2rem);}
+  .contact-box p{color:color-mix(in srgb, var(--bg) 70%, transparent); margin-top:8px; max-width:44ch;}
+  .contact-links{display:flex; gap:12px; flex-wrap:wrap;}
+  .contact-links a{font-family:var(--font-mono); font-size:13px; text-decoration:none; padding:11px 18px; border-radius:9px; border:1px solid color-mix(in srgb, var(--bg) 30%, transparent); color:var(--bg); white-space:nowrap;}
+  .contact-links a.primary{background:var(--amber); border-color:var(--amber); color:#1a1200;}
+  footer{max-width:var(--maxw); margin-inline:auto; padding-block:28px calc(28px + env(safe-area-inset-bottom,0px)); display:flex; justify-content:space-between; font-family:var(--font-mono); font-size:11.5px; color:var(--text-faint); flex-wrap:wrap; gap:8px;}
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width:880px){
+    .navwrap{flex-wrap:wrap; row-gap:10px;}
+    nav.links{order:3; flex:1 1 100%; flex-wrap:wrap; overflow-x:visible; white-space:normal; row-gap:10px;}
+    .hero{grid-template-columns:1fr; padding-top:40px;}
+    .stat-strip{grid-template-columns:repeat(2,1fr);}
+    .about-wrap{grid-template-columns:1fr; gap:16px;}
+    .about-photo{width:110px; height:110px;}
+    .caplist{grid-template-columns:1fr;}
+    .caprow{border-right:none;}
+    .score-wrap{grid-template-columns:1fr;}
+    .stack-groups{grid-template-columns:1fr;}
+    .contact-box{padding:30px;}
+    section{padding-block:44px;}
+  }
+  @media (prefers-reduced-motion: reduce){ *{transition:none!important; animation:none!important;} }
+</style>
+
+<div class="grid-bg" aria-hidden="true"></div>
+
+<header class="top">
+  <div class="navwrap">
+    <div class="brand"><span class="mark" aria-hidden="true"></span>Julia Korbi</div>
+    <nav class="links" aria-label="Section navigation">
+      <a href="#about">About me</a>
+      <a href="#experience">Experience</a>
+      <a href="#capabilities">Skills</a>
+      <a href="#leadership">Leadership</a>
+      <a href="#cases">Use cases</a>
+      <a href="#assets">Marketing&nbsp;Assets</a>
+      <a href="#stack">Stack</a>
+    </nav>
+    <a class="navcta" href="#contact">Contact</a>
+  </div>
+</header>
+
+<main>
+  <!-- ============ HERO ============ -->
+  <section class="hero" style="border-top:none; padding-top:56px;" aria-label="Introduction">
+    <div>
+      <span class="eyebrow"><span class="dot"></span>GTM SYSTEMS &amp; MARKETING OPERATIONS</span>
+      <h1>I build the infrastructure <span class="hl">between a click and a closed deal.</span></h1>
+      <p class="lede">Five-plus years turning marketing execution into revenue infrastructure — full-cycle demand generation, attribution logic, lifecycle architecture, and AI-driven automation across HubSpot, Salesforce, and the tools that connect them. I don't just report on the funnel. I build what makes it trustworthy.</p>
+      <div class="hero-ctas">
+        <a class="btn primary" href="#cases">View business cases <span aria-hidden="true">→</span></a>
+        <a class="btn" href="https://www.linkedin.com/in/julia-korbi" target="_blank" rel="noopener">Connect on LinkedIn</a>
+        <a class="btn" href="mailto:julia.korbi@outlook.com">Contact via email</a>
+      </div>
+
+      <div class="stat-strip">
+        <div class="stat"><div class="n"><span class="u">700K+</span></div><div class="l">Records governed</div></div>
+        <div class="stat"><div class="n"><span class="u">30%</span></div><div class="l">MQL lift, attribution fix</div></div>
+        <div class="stat"><div class="n"><span class="u">20%</span></div><div class="l">SAL→SQO lift, weakest stage</div></div>
+        <div class="stat"><div class="n"><span class="u">70%</span></div><div class="l">Follow-up time cut, AI SDR</div></div>
+        <div class="stat"><div class="n"><span class="u">3hr→30m</span></div><div class="l">Weekly attribution cleanup</div></div>
+      </div>
+    </div>
+
+    <div class="hero-diagram">
+      <svg viewBox="0 0 460 320" role="img" aria-labelledby="heroSvgTitle" style="width:100%;height:auto;">
+        <title id="heroSvgTitle">Diagram: five areas of expertise — marketing operations, CRM and data, sales and revenue operations, automation and AI, and team leadership — connected to one pipeline at the center.</title>
+        <g stroke="var(--border-strong)" stroke-width="1.4" fill="none">
+          <line x1="230" y1="160" x2="230" y2="62"/>
+          <line x1="230" y1="160" x2="368" y2="112"/>
+          <line x1="230" y1="160" x2="334" y2="252"/>
+          <line x1="230" y1="160" x2="130" y2="252"/>
+          <line x1="230" y1="160" x2="108" y2="112"/>
+        </g>
+
+        <circle cx="230" cy="160" r="38" fill="var(--surface-2)" stroke="var(--amber)" stroke-width="2"/>
+        <text x="230" y="156" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" font-weight="600" fill="var(--text)">PIPELINE</text>
+        <text x="230" y="168" text-anchor="middle" font-family="IBM Plex Mono" font-size="7" fill="var(--text-faint)">lead → closed</text>
+
+        <g font-family="IBM Plex Mono" font-size="8.5">
+          <rect x="176" y="32" width="108" height="30" rx="7" fill="var(--amber-soft)" stroke="var(--amber)"/>
+          <text x="230" y="51" text-anchor="middle" fill="var(--amber)" font-weight="600">MARKETING OPS</text>
+
+          <rect x="368" y="92" width="88" height="40" rx="7" fill="var(--cyan-soft)" stroke="var(--cyan)"/>
+          <text x="412" y="110" text-anchor="middle" fill="var(--cyan)" font-weight="600">CRM &amp;</text>
+          <text x="412" y="122" text-anchor="middle" fill="var(--cyan)" font-weight="600">DATA</text>
+
+          <rect x="286" y="252" width="96" height="40" rx="7" fill="var(--violet-soft)" stroke="var(--violet)"/>
+          <text x="334" y="270" text-anchor="middle" fill="var(--violet)" font-weight="600">AUTOMATION</text>
+          <text x="334" y="282" text-anchor="middle" fill="var(--violet)" font-weight="600">&amp; AI</text>
+
+          <rect x="78" y="252" width="104" height="40" rx="7" fill="var(--good-soft)" stroke="var(--good)"/>
+          <text x="130" y="270" text-anchor="middle" fill="var(--good)" font-weight="600">SALES &amp;</text>
+          <text x="130" y="282" text-anchor="middle" fill="var(--good)" font-weight="600">REVOPS</text>
+
+          <rect x="14" y="92" width="94" height="40" rx="7" fill="var(--surface-2)" stroke="var(--border-strong)"/>
+          <text x="61" y="110" text-anchor="middle" fill="var(--text-muted)" font-weight="600">TEAM</text>
+          <text x="61" y="122" text-anchor="middle" fill="var(--text-muted)" font-weight="600">LEADERSHIP</text>
+        </g>
+
+        <circle cx="230" cy="62" r="3" fill="var(--amber)"/>
+        <circle cx="368" cy="112" r="3" fill="var(--cyan)"/>
+        <circle cx="334" cy="252" r="3" fill="var(--violet)"/>
+        <circle cx="130" cy="252" r="3" fill="var(--good)"/>
+        <circle cx="108" cy="112" r="3" fill="var(--text-faint)"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section id="about" aria-labelledby="aboutH">
+    <div class="sec-head">
+      <span class="eyebrow"><span class="dot"></span>ABOUT ME</span>
+      <h2 id="aboutH">From driving demand to building the funnel engine</h2>
+      <span class="tag">Career progression, 2020 → 2026</span>
+    </div>
+    <div class="about-wrap">
+      <div class="about-photo-col">
+        <img class="about-photo" src="julia-photo.jpg" alt="Portrait of Julia Korbi" width="640" height="640" loading="lazy">
+      </div>
+      <div class="about-text-col">
+        <div class="about-copy">
+          <p>I started in email execution — coding HTML templates, segmenting lists, running the send calendar for a global product portfolio. That grew into full-cycle <strong>demand generation</strong> across AMER, EMEA, and APAC, and eventually into <strong>owning the marketing operations, automation, and AI layer</strong> underneath it: attribution, lifecycle, lead scoring, SLA enforcement, and the systems that let the funnel tell the truth without anyone having to babysit it. The specifics are below.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EXPERIENCE ============ -->
+  <section id="experience" aria-labelledby="expH">
+    <div class="sec-head">
+      <span class="eyebrow"><span class="dot"></span>EXPERIENCE</span>
+      <h2 id="expH">Where this was built</h2>
+    </div>
+    <div class="exp-list">
+      <div class="exp-row">
+        <div class="exp-when">Oct 2024 &ndash; Jul 2026</div>
+        <div class="exp-what">
+          <h3>Manager, Marketing Automation &amp; Operations &mdash; Pathlock</h3>
+          <p>Owned the HubSpot&ndash;Salesforce ecosystem and led the global Marketing Ops &amp; ADR teams across a 700K+ record database.</p>
+        </div>
+      </div>
+      <div class="exp-row">
+        <div class="exp-when">Jul 2020 &ndash; Oct 2024</div>
+        <div class="exp-what">
+          <h3>Email &amp; Database Marketing &mdash; Veeam Software</h3>
+          <p>Three roles over 4+ years &mdash; from Junior Email Marketing Specialist to Global Email &amp; Database Marketing Specialist &mdash; running lifecycle campaigns across a 1M+ recipient database.</p>
+        </div>
+      </div>
+    </div>
+    <a class="exp-more" href="https://www.linkedin.com/in/julia-korbi" target="_blank" rel="noopener">Full role-by-role history on LinkedIn &#8599;</a>
+  </section>
+
+  <!-- ============ CAPABILITIES ============ -->
+  <section id="capabilities" aria-labelledby="capH">
+    <div class="sec-head">
+      <h2 id="capH">Skills</h2>
+      <span class="tag">Marketing + Sales + Data + Automation + People — what I can do, in practice</span>
+    </div>
+    <div class="caplist">
+      <div class="caprow"><span class="catag">01</span><div><h3>Marketing Ops Backend</h3><p>Built and supported the operations layer behind every channel — the machinery underneath the campaigns, not just the campaigns.</p></div></div>
+      <div class="caprow"><span class="catag">02</span><div><h3>CRM Automation &amp; Context</h3><p>Automation across every CRM in the stack, so lead-journey context migrates intact through every handoff.</p></div></div>
+      <div class="caprow"><span class="catag">03</span><div><h3>Database Governance</h3><p>Property audits, deduplication, segmentation, and full send-calendar ownership so the database never overloads.</p></div></div>
+      <div class="caprow"><span class="catag">04</span><div><h3>AI Agent Engineering</h3><p>Configured the Qualified AI SDR to turn CRM context into outreach more personalized than a manual message — in seconds.</p></div></div>
+      <div class="caprow"><span class="catag">05</span><div><h3>AI-Powered Template Generation</h3><p>Built a Claude Skill from the company's brand-approved email and landing-page templates, so any marketer could generate an on-brand build with no coding — no single-person bottleneck, every channel more independent in producing its own content.</p></div></div>
+      <div class="caprow"><span class="catag">06</span><div><h3>Analytics &amp; Reporting</h3><p>Funnel dashboards, attribution reporting, and the KPI framework leadership actually checks before a QBR.</p></div></div>
+      <div class="caprow"><span class="catag">07</span><div><h3>Full-Cycle Demand Generation</h3><p>Idea to close: concept, assets, stakeholder sign-off, segmentation, tracking build, launch, benchmark reporting, optimization, and funnel tracking through to the deal.</p></div></div>
+      <div class="caprow"><span class="catag">08</span><div><h3>Nurture Architecture</h3><p>Persona-adjusted nurture flows end to end, with MVP dashboards that make the next step obvious.</p></div></div>
+      <div class="caprow"><span class="catag">09</span><div><h3>Sales Enablement &amp; Clay Enrichment</h3><p>Built automated outbound sequences in Salesloft and Outreach mapped to defined ICP Key Plays, backed by Clay-enriched account and persona research so every sequence reached the right contact with the right context.</p></div></div>
+      <div class="caprow"><span class="catag">10</span><div><h3>Team &amp; Cross-Functional Leadership</h3><p>Led the global Marketing Ops and ADR teams at Pathlock — distributed, aligned, and enabled to work without waiting on me.</p></div></div>
+    </div>
+  </section>
+
+  <!-- ============ LEADERSHIP ============ -->
+  <section id="leadership" aria-labelledby="leadH">
+    <div class="sec-head">
+      <span class="eyebrow"><span class="dot"></span>LEADERSHIP</span>
+      <h2 id="leadH">From cleaning the data to running the department</h2>
+      <span class="tag">How the team came to exist, not just that I led it</span>
+    </div>
+
+    <div class="skill-flow" role="img" aria-label="Process diagram: joined as Email Marketing and Automation Manager, found the underlying data was unreliable, ran the audit and wrote the first process documentation, added automation on top, expanded the team by merging Marketing Ops and Research, then divided the documented roles and hired an Email Marketing Specialist, freeing the role to operate at the GTM systems level with Sales Ops, RevOps and Marketing Leadership.">
+      <div class="sf-step"><span class="sf-eyebrow">Start</span><span class="sf-label">Joined as Email<br>Marketing &amp; Automation Manager</span></div>
+      <span class="sf-arrow" aria-hidden="true">→</span>
+      <div class="sf-step"><span class="sf-eyebrow">Found</span><span class="sf-label">Underlying data<br>was unreliable</span></div>
+      <span class="sf-arrow" aria-hidden="true">→</span>
+      <div class="sf-step sf-highlight"><span class="sf-eyebrow">Built</span><span class="sf-label">Audit, first process<br>docs, then automation</span></div>
+      <span class="sf-arrow" aria-hidden="true">→</span>
+      <div class="sf-step sf-highlight"><span class="sf-eyebrow">Scaled</span><span class="sf-label">Team expanded &mdash;<br>Ops + Research merged</span></div>
+      <span class="sf-arrow" aria-hidden="true">→</span>
+      <div class="sf-step sf-result"><span class="sf-eyebrow">Result</span><span class="sf-label">Roles divided, hired,<br>operating at GTM systems level</span></div>
+    </div>
+
+    <div class="about-copy narrative-indent">
+      <p>The team wasn't inherited &mdash; it grew out of the audit. Once the documentation existed, I divided the department's ongoing execution against it and hired an Email Marketing Specialist to own that work, freeing me to operate at the GTM systems level: partnering with Sales Ops, RevOps, and Marketing Leadership globally, while distributing tasks and strategy across the team rather than holding both center and edges myself. The same principles run through all of it &mdash; clean data first, SLAs enforced as standards rather than suggestions, context that travels with the lead, and pruning whatever doesn't prove its value.</p>
+    </div>
+
+    <span class="metrics-label" style="margin-top:28px;">Day-to-day, in practice</span>
+    <div class="stack-groups">
+      <div class="stack-group">
+        <h4>People management</h4>
+        <div class="chips"><span class="chip">1:1s</span><span class="chip">Team syncs</span><span class="chip">Informal check-ins</span><span class="chip">Performance reviews</span><span class="chip">Comp conversations</span><span class="chip">MBO setting &amp; evaluation</span></div>
+      </div>
+      <div class="stack-group">
+        <h4>Department ownership</h4>
+        <div class="chips"><span class="chip">Task assignment</span><span class="chip">Deadline &amp; brief approval</span><span class="chip">Team brainstorms</span><span class="chip">Cross-functional alignment</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BUSINESS CASES ============ -->
+  <section id="cases" aria-labelledby="casesH">
+    <div class="sec-head">
+      <h2 id="casesH">Implemented Use Cases</h2>
+      <span class="tag">Problem → mechanism → outcome, grouped by what each system solves.</span>
+    </div>
+
+    <p class="email-note narrative-indent">The funnel's weakest stage &mdash; SAL→SQO conversion &mdash; improved roughly 20% across this period. No single system gets sole credit: SLA alerts tied MQL crediting to a completed demo instead of looser criteria, giving Sales a cleaner signal to work; SDR outreach targeting and mechanics tightened; follow-up reporting became consistent; weekly MQL/SAL syncs kept Sales and Marketing working from the same definition of qualified; and additional marketing-channel coverage closed the account segments outreach was missing. This was operational ownership, not budget ownership &mdash; the systems below are the levers that moved it.</p>
+
+    <div class="case-group">
+      <div class="case-group-head amber">
+        <span class="eyebrow-sm">01 &middot; Data Integrity &amp; Attribution</span>
+        <h3>Making the funnel tell the truth</h3>
+        <p>Attribution logic, database health, and lifecycle rules that Sales and Marketing can both trust without a manual audit.</p>
+      </div>
+      <div class="case-grid">
+        <article class="card" data-idx="0">
+          <div class="chead">
+            <div><span class="pill amber">ATTRIBUTION · SALESFORCE</span><h3>Opportunity Attribution Engine</h3></div>
+            <div class="ic-wrap"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="4" cy="12" r="3" stroke="var(--amber)" stroke-width="1.6"/><path d="M7 12h6M13 8 20 8M13 16 20 16" stroke="var(--amber)" stroke-width="1.6"/><circle cx="20" cy="8" r="2.4" stroke="var(--amber)" stroke-width="1.6"/><circle cx="20" cy="16" r="2.4" stroke="var(--amber)" stroke-width="1.6"/></svg></div>
+          </div>
+          <p class="problem">Sales hand-picked deal source on every opportunity. It needed manual correction roughly 80% of the time — call it a rolling audit, not a report.</p>
+          <div class="ba"><span>Before</span><b>3 hrs/wk manual cleanup</b><span class="arrow">→</span><b>30-min health check</b></div>
+          <details>
+            <summary><span class="chev">▸</span> View full breakdown</summary>
+            <div class="detail-body">
+              <div class="d-row"><b>Mechanism</b>Reads Campaign Member logs against the opportunity's Primary Contact Role: a Source-type touch inside a 90-day window before opportunity creation auto-populates Opportunity Source + Source Campaign; an Influence-type or out-of-window touch attributes to influence only; anything ambiguous falls into a flagged manual-review queue instead of silently guessing.</div>
+              <div class="d-row"><b>Guardrails</b>Validation rules require Deal Type and a Primary Contact Role at opportunity creation, so the flow never has to fall back on missing data.</div>
+              <div class="d-row"><b>Outcome</b>Funnel reporting became representative and realistic without sales guesswork — and the model shipped live, not handed off at spec stage.</div>
+            </div>
+          </details>
+        </article>
+
+        <article class="card" data-idx="4">
+          <div class="chead">
+            <div><span class="pill amber">DATA GOVERNANCE · HUBSPOT</span><h3>Database Cleanup &amp; Health Dashboard</h3></div>
+            <div class="ic-wrap"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="16" rx="2" stroke="var(--amber)" stroke-width="1.6"/><path d="M3 9h18M9 9v11" stroke="var(--amber)" stroke-width="1.6"/></svg></div>
+          </div>
+          <p class="problem">450 HubSpot properties, most undocumented or unused, and no way to check database health without diving into raw records.</p>
+          <div class="ba"><span>450 props</span><b>→ 140 essential</b><span class="arrow">→</span><b>1 health dashboard</b></div>
+          <details>
+            <summary><span class="chev">▸</span> View full breakdown</summary>
+            <div class="detail-body">
+              <div class="d-row"><b>Action</b>Audited every property, retired what wasn't earning its place, and rebuilt the automation logic that depended on the fields being removed — so cleanup didn't break anything downstream.</div>
+              <div class="d-row"><b>Companion system</b>Automated Engagement Status → Marketing/Non-marketing contact logic on priority-ordered rules (suppression checks first, then engagement signals), keeping the HubSpot marketing-contact limit managed without manual review.</div>
+              <div class="d-row"><b>Outcome</b>A 450 → 140 property reduction and a single dashboard that answers "is the database healthy?" without opening a single record.</div>
+            </div>
+          </details>
+        </article>
+
+        <article class="card" data-idx="7">
+          <div class="chead">
+            <div><span class="pill amber">LIFECYCLE · HUBSPOT</span><h3>Lifecycle Stage Redesign</h3></div>
+            <div class="ic-wrap"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 6h18M3 12h13M3 18h8" stroke="var(--amber)" stroke-width="2" stroke-linecap="round"/><circle cx="21" cy="18" r="2" fill="var(--amber)"/></svg></div>
+          </div>
+          <p class="problem">Duplicate stage values, no documented rules for using them, and leads stuck permanently in "Cadence" or "Nurture" with nobody owning the next step.</p>
+          <div class="ba"><span>Before</span><b>Duplicate, undocumented stages</b><span class="arrow">→</span><b>One clear map</b></div>
+          <details>
+            <summary><span class="chev">▸</span> View full breakdown</summary>
+            <div class="detail-body">
+              <div class="d-row"><b>Action</b>Audited and removed unused/duplicate values, then separated the model into two layers: Lifecycle Stage as a forward-only record of "how far this contact has ever progressed," and Lead/Sales Status as the cyclical "what's happening right now" — never conflating the two.</div>
+              <div class="d-row"><b>Mechanism</b>Explicit next-step logic at every status, plus a defined re-engagement path so "stuck in nurture" stopped being a permanent state.</div>
+              <div class="d-row"><b>Outcome</b>Sales and Marketing now share one transparent answer to "where is this lead, and what happens next" — no more silent dead ends.</div>
+            </div>
+          </details>
+        </article>
+      </div>
+    </div>
+
+    <div class="case-group">
+      <div class="case-group-head violet">
+        <span class="eyebrow-sm">02 &middot; Lead &amp; Demand Systems</span>
+        <h3>Turning signal into a shared definition of "qualified"</h3>
+        <p>Scoring, SLA enforcement, and pacing logic that replaced case-by-case debate with rules everyone can see.</p>
+      </div>
+      <div class="case-grid">
+        <article class="card" data-idx="2">
+          <div class="chead">
+            <div><span class="pill violet">LEAD SCORING · HUBSPOT</span><h3>Three-Layer Lead Scoring</h3></div>
+            <div class="ic-wrap"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="14" width="4" height="7" fill="var(--violet)"/><rect x="10" y="9" width="4" height="12" fill="var(--violet)"/><rect x="17" y="4" width="4" height="17" fill="var(--violet)"/></svg></div>
+          </div>
+          <p class="problem">No shared definition of a "good" lead — Sales and Marketing argued qualification case by case instead of trusting a score.</p>
+          <div class="ba"><span>Model</span><b>Fit + Intent + Account Boost</b><span class="arrow">→</span><b>Score bands + sales flags</b></div>
+          <details>
+            <summary><span class="chev">▸</span> View scoring criteria</summary>
+            <div class="detail-body">
+              <div class="score-wrap" style="margin-top:0;">
+                <div class="score-card">
+                  <h4>Fit score</h4>
+                  <div class="score-row"><span>C-level / VP persona</span><span class="v pos">+50</span></div>
+                  <div class="score-row"><span>US / Canada region</span><span class="v pos">+50</span></div>
+                  <div class="score-row"><span>Use case = active Sales Play</span><span class="v pos">+50</span></div>
+                  <div class="score-row"><span>1000+ employees</span><span class="v pos">+30</span></div>
+                  <div class="score-row"><span>Other / unqualified role</span><span class="v neg">−25</span></div>
+                </div>
+                <div class="score-card">
+                  <h4>Intent score</h4>
+                  <div class="score-row"><span>1:1 demo requested</span><span class="v pos">+50</span></div>
+                  <div class="score-row"><span>In-browser demo</span><span class="v pos">+30</span></div>
+                  <div class="score-row"><span>3+ sessions in 7 days</span><span class="v pos">+35</span></div>
+                  <div class="score-row"><span>2+ pricing page visits</span><span class="v pos">+30</span></div>
+                  <div class="score-row"><span>eBook / report download</span><span class="v pos">+10</span></div>
+                </div>
+              </div>
+              <div class="score-card" style="margin-top:10px;">
+                <h4>Account boost — multi-contact engagement</h4>
+                <div class="score-row"><span>2+ engaged contacts, one account</span><span class="v pos">+25</span></div>
+                <div class="score-row"><span>3+ engaged contacts, one account</span><span class="v pos">+40</span></div>
+                <div class="score-row"><span>Engagement across multiple seniority levels</span><span class="v pos">+30</span></div>
+              </div>
+              <div class="d-row" style="margin-top:6px;"><b>Outcome</b>A clear score range across every incoming lead, with flags the sales team can act on instead of a subjective "is this lead good?" debate.</div>
+            </div>
+          </details>
+        </article>
+
+        <article class="card" data-idx="3">
+          <div class="chead">
+            <div><span class="pill violet">SLA ALERTING</span><h3>Tiered SLA Alerting</h3></div>
+            <div class="ic-wrap"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="13" r="8" stroke="var(--violet)" stroke-width="1.6"/><path d="M12 8v5l4 2" stroke="var(--violet)" stroke-width="1.6" stroke-linecap="round"/><path d="M9 2h6" stroke="var(--violet)" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+          </div>
+          <p class="problem">The highest-intent actions — 1:1 demo requests, in-browser demos — had no enforced response discipline, and leadership had no visibility into whether they were actually being worked (Ops included).</p>
+          <div class="ba"><span>Cadence</span><b>10 min → 12 hr → 24 hr</b><span class="arrow">→</span><b>Leadership CC</b></div>
+          <details>
+            <summary><span class="chev">▸</span> View full breakdown</summary>
+            <div class="detail-body">
+              <div class="d-row"><b>Action</b>Built escalating first-response alerts on the highest-intent triggers, reminding at 10 minutes, 12 hours, and 24 hours, and CC'ing leadership once a reminder was missed.</div>
+              <div class="d-row"><b>Design choice</b>Alerts route to Sales and Ops, not just the rep, and escalate to leadership on a miss — so the whole chain can see how leads are actually being worked instead of trusting a lagging report.</div>
+              <div class="d-row"><b>Outcome</b>Turned "someone should probably follow up fast" into an enforced, auditable SLA on the actions that matter most. It also reshaped how MQL volume was counted: an MQL was credited once the highest-intent action &mdash; a completed demo &mdash; actually closed, giving Sales a cleaner signal than looser criteria had, and feeding directly into the SAL→SQO conversion gains covered above.</div>
+            </div>
+          </details>
+        </article>
+
+        <article class="card" data-idx="10">
+          <div class="chead">
+            <div><span class="pill violet">NURTURE ARCHITECTURE · HUBSPOT</span><h3>Multi-Track Nurture Pacing Engine</h3></div>
+            <div class="ic-wrap"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 8h11M3 16h7" stroke="var(--violet)" stroke-width="2" stroke-linecap="round"/><circle cx="19" cy="8" r="2.4" stroke="var(--violet)" stroke-width="1.6"/><circle cx="13" cy="16" r="2.4" stroke="var(--violet)" stroke-width="1.6"/></svg></div>
+          </div>
+          <p class="problem">Persona-specific automated nurture and the always-on scheduled send calendar could both enroll the same contact independently — with no shared limit on how often that person actually got emailed.</p>
+          <div class="ba"><span>Before</span><b>Two tracks, no shared cap</b><span class="arrow">→</span><b>2–3 touches/wk, shared</b></div>
+          <details>
+            <summary><span class="chev">▸</span> View full breakdown</summary>
+            <div class="detail-body">
+              <div class="d-row"><b>Action</b>Built separate nurture tracks for different personas, designed to run in parallel with the regular scheduled send calendar rather than compete with it for the same inbox.</div>
+              <div class="d-row"><b>Mechanism</b>Every send — automated or scheduled — checks the contact's last marketing email send date before firing, holding the message until it clears a shared frequency ceiling. Both tracks can process the same contact simultaneously, capped at 2–3 total touches per week regardless of which one is sending.</div>
+              <div class="d-row"><b>Visibility</b>Built a dashboard showing every enrolled contact's current position across active tracks and remaining send capacity before the next touch, so pacing was a visible, managed constraint rather than a guess.</div>
+              <div class="d-row"><b>Outcome</b>Persona-relevant nurture and the always-on send calendar ran at the same time without fatiguing or overloading the database.</div>
+              <div class="d-row">
+                <b>Program results</b>
+                <div class="email-metrics">
+                  <span class="pill good">3× open / click / CTR vs. baseline</span>
+                  <span class="pill good">10× webinar registration growth</span>
+                  <span class="metrics-break" aria-hidden="true"></span>
+                  <span class="pill">7 product pillars, one send calendar</span>
+                  <span class="pill">3 recipient buckets, layered interests</span>
+                  <span class="pill">700K+ database</span>
+                </div>
+              </div>
+            </div>
+          </details>
+        </article>
+      </div>
+    </div>
+
+    <div class="case-group">
+      <div class="case-group-head cyan">
+        <span class="eyebrow-sm">03 &middot; AI &amp; Automation</span>
+        <h3>Where AI replaced manual work &mdash; with a defined mechanism</h3>
+        <p>Each case names what problem existed, why AI was the right tool, and what it actually changed &mdash; not just that AI was "leveraged."</p>
+      </div>
+      <div class="case-grid">
+        <article class="card" data-idx="1">
+          <div class="chead">
+            <div><span class="pill cyan">AI SDR · QUALIFIED</span><h3>AI SDR, built in Qualified</h3></div>
+            <div class="ic-wrap"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 6h13a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H10l-4 3v-3H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2Z" stroke="var(--cyan)" stroke-width="1.6"/><circle cx="9" cy="11" r="1" fill="var(--cyan)"/><circle cx="13" cy="11" r="1" fill="var(--cyan)"/></svg></div>
+          </div>
+          <p class="problem">Every inbound lead needed personalized first-touch follow-up before a human SDR could jump in — and dropped demo-request forms were eating SDR time in manual chasing.</p>
+          <div class="ba"><span>Impact</span><b>70% less manual follow-up</b><span class="arrow">→</span><b>AI-first, human handoff</b></div>
+          <details>
+            <summary><span class="chev">▸</span> View full breakdown</summary>
+            <div class="detail-body">
+              <div class="d-row"><b>Mechanism</b>The agent pulls context automatically from CRM properties — company, tech stack, assigned persona, webinar/event attendance and the questions asked there, known account pain points — and uses it to nurture the lead through highly personalized outreach with zero SDR involvement until first response.</div>
+              <div class="d-row"><b>Handoff</b>Once the lead responds, it's handed to a live SDR for the actual conversation and meeting — the AI owns the nurture, not the close.</div>
+              <div class="d-row"><b>Outcome</b>Roughly 70% less manual time spent on marketing follow-up and chasing dropped demo requests.</div>
+            </div>
+          </details>
+        </article>
+
+        <article class="card" data-idx="5">
+          <div class="chead">
+            <div><span class="pill cyan">AI ENABLEMENT · CLAUDE SKILL</span><h3>Templates, Built With a Claude Skill</h3></div>
+            <div class="ic-wrap"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="6" width="14" height="10" rx="1.5" stroke="var(--cyan)" stroke-width="1.6"/><rect x="7" y="10" width="14" height="10" rx="1.5" fill="var(--surface)" stroke="var(--cyan)" stroke-width="1.6"/></svg></div>
+          </div>
+          <p class="problem">Every new email or landing page ran through one person's queue — coding each one by hand made a single point of failure out of anything another marketer needed shipped.</p>
+          <div class="ba"><span>Before</span><b>One-person coding queue</b><span class="arrow">→</span><b>Claude Skill, self-serve</b></div>
+          <details>
+            <summary><span class="chev">▸</span> View full breakdown</summary>
+            <div class="detail-body">
+              <div class="d-row"><b>Why AI</b>The templates, brand rules, and tracking requirements were already well-defined and repeatable — a structured task suited to a packaged AI skill rather than a one-off manual build every time.</div>
+              <div class="d-row"><b>What was built</b>A Claude Skill packaging the company's approved email and landing-page templates, brand rules, and tracking requirements. A marketer describes what they need in plain language; the skill generates a ready-to-ship, on-brand HTML build — no developer, no ticket, no waiting on one person's calendar.</div>
+              <div class="d-row"><b>Guardrails</b>The skill enforces brand styling, tracking parameters, and responsive layout every time, so self-serve speed doesn't come at the cost of consistency or broken tracking.</div>
+              <div class="d-row"><b>Outcome</b>Every channel team gained real independence in content production, while every output still matched brand and tracking standards.</div>
+            </div>
+          </details>
+        </article>
+
+        <article class="card" data-idx="9">
+          <div class="chead">
+            <div><span class="pill cyan">AI OPS · CLAUDE</span><h3>Bulk Tracking Rollout via Claude</h3></div>
+            <div class="ic-wrap"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="7" height="7" rx="1.5" stroke="var(--cyan)" stroke-width="1.6"/><rect x="13" y="4" width="7" height="7" rx="1.5" stroke="var(--cyan)" stroke-width="1.6" opacity=".5"/><rect x="4" y="13" width="7" height="7" rx="1.5" stroke="var(--cyan)" stroke-width="1.6" opacity=".5"/><rect x="13" y="13" width="7" height="7" rx="1.5" stroke="var(--cyan)" stroke-width="1.6" opacity=".25"/></svg></div>
+          </div>
+          <p class="problem">Thousands of live HubSpot registration forms needed new tracking fields added — one at a time, by hand, with zero margin for inconsistency.</p>
+          <div class="ba"><span>Before</span><b>Days of manual form edits</b><span class="arrow">→</span><b>1 prompt · ~30 min</b></div>
+          <details>
+            <summary><span class="chev">▸</span> View full breakdown</summary>
+            <div class="detail-body">
+              <div class="d-row"><b>Action</b>Directed Claude to script and execute the tracking-field rollout across the entire form library in a single run, instead of opening each form individually.</div>
+              <div class="d-row"><b>Why it mattered</b>A task that would have consumed days of low-value manual editing — and introduced human error at scale — compressed into one prompt and a verification pass.</div>
+              <div class="d-row"><b>Outcome</b>A reusable pattern: routine, high-volume HubSpot admin work now goes through AI-assisted execution first, manual editing second.</div>
+            </div>
+          </details>
+        </article>
+      </div>
+    </div>
+
+    <div class="case-group">
+      <div class="case-group-head good">
+        <span class="eyebrow-sm">04 &middot; Sales Enablement &amp; GTM Execution</span>
+        <h3>Keeping outbound aligned to strategy, not convenience</h3>
+        <p>Research and sequencing built against defined ICP plays instead of whichever list was easiest to reach.</p>
+      </div>
+      <div class="case-grid">
+        <article class="card" data-idx="6">
+          <div class="chead">
+            <div><span class="pill good">ENRICHMENT · CLAY</span><h3>Clay-Powered Persona Research</h3></div>
+            <div class="ic-wrap"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="9" cy="8" r="3.4" stroke="var(--good)" stroke-width="1.6"/><path d="M3 20c0-3.6 2.7-6 6-6s6 2.4 6 6" stroke="var(--good)" stroke-width="1.6"/><path d="M16 5l1.6 1.6M20 8h-2.4M18.6 12.6 17 11" stroke="var(--good)" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+          </div>
+          <p class="problem">Cold outreach and account research needed to reflect who the buyer actually is — not a static list with a title and a guess.</p>
+          <div class="ba"><span>Signals</span><b>Tech stack · hiring · triggers</b><span class="arrow">→</span><b>ABM Top 100</b></div>
+          <details>
+            <summary><span class="chev">▸</span> View full breakdown</summary>
+            <div class="detail-body">
+              <div class="d-row"><b>Action</b>Used Clay to research and enrich the highest-value personas against the company's defined GTM pillars — contact and tech-stack enrichment feeding cold-outreach relevance, plus company-level signal monitoring: public/private status, hiring signals on specific job titles, and industry-report trigger events tied to problems the product solves.</div>
+              <div class="d-row"><b>Ongoing loop</b>A recurring health check flags when a previously-researched contact changes companies — reopening the account with fresh context instead of losing the relationship.</div>
+              <div class="d-row"><b>Feeds into</b>The ABM Top 100 account process: research → Clay enrichment → validation → persona-tagged CRM upload.</div>
+            </div>
+          </details>
+        </article>
+
+        <article class="card" data-idx="8">
+          <div class="chead">
+            <div><span class="pill good">SALES ENGAGEMENT · OUTREACH</span><h3>ICP-Mapped Outreach Sequences</h3></div>
+            <div class="ic-wrap"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 6h6M3 12h10M3 18h14" stroke="var(--good)" stroke-width="2" stroke-linecap="round"/><circle cx="19" cy="6" r="1.6" fill="var(--good)"/></svg></div>
+          </div>
+          <p class="problem">Outbound needed to reflect defined Key Plays, not generic sequences run against whatever list was on hand.</p>
+          <div class="ba"><span>Built in</span><b>Salesloft &amp; Outreach</b><span class="arrow">→</span><b>Auto pending-task reports</b></div>
+          <details>
+            <summary><span class="chev">▸</span> View full breakdown</summary>
+            <div class="detail-body">
+              <div class="d-row"><b>Action</b>Built sales sequences in Salesloft and Outreach mapped to Sales's defined ICP Key Plays, and uploaded the matching targeted account/contact lists into each one.</div>
+              <div class="d-row"><b>Reporting layer</b>Set up automated AI reporting on pending sales tasks, giving leadership visibility into execution against the plays without manually pulling a report.</div>
+              <div class="d-row"><b>Outcome</b>Outbound execution stayed aligned to strategy instead of drifting toward whichever list was easiest to reach for.</div>
+            </div>
+          </details>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EMAIL CRAFT ============ -->
+  <section id="assets" aria-labelledby="emH">
+    <div class="sec-head">
+      <h2 id="emH">The craft behind the build</h2>
+      <span class="tag">HTML email development · landing pages · Claude Skill template generation</span>
+    </div>
+    <p class="email-note narrative-indent">Before the systems work, there was the build work — coding responsive HTML templates and landing pages by hand, and running HubSpot Design Manager end to end. That hands-on template knowledge became the foundation for a Claude Skill: the company's approved email and landing-page templates, brand rules, and tracking requirements, packaged so any marketer — no HTML, no waiting on one person's queue — can describe what they need and get an on-brand, ready-to-ship build back.</p>
+
+    <div class="skill-flow" role="img" aria-label="Process diagram: brand templates and rules feed a Claude Skill, which any marketer can prompt with no coding required, producing an on-brand email or landing page ready to ship, with every channel now able to build independently.">
+      <div class="sf-step"><span class="sf-eyebrow">Input</span><span class="sf-label">Brand templates<br>+ tracking rules</span></div>
+      <span class="sf-arrow" aria-hidden="true">→</span>
+      <div class="sf-step sf-highlight"><span class="sf-eyebrow">Skill</span><span class="sf-label">Claude Skill</span></div>
+      <span class="sf-arrow" aria-hidden="true">→</span>
+      <div class="sf-step"><span class="sf-eyebrow">User</span><span class="sf-label">Any marketer,<br>no coding</span></div>
+      <span class="sf-arrow" aria-hidden="true">→</span>
+      <div class="sf-step"><span class="sf-eyebrow">Output</span><span class="sf-label">On-brand build,<br>ready to ship</span></div>
+      <span class="sf-arrow" aria-hidden="true">→</span>
+      <div class="sf-step sf-result"><span class="sf-eyebrow">Result</span><span class="sf-label">Every channel,<br>independent</span></div>
+    </div>
+  </section>
+
+  <!-- ============ STACK ============ -->
+  <section id="stack" aria-labelledby="stackH">
+    <div class="sec-head">
+      <h2 id="stackH">The stack</h2>
+      <span class="tag">Tools I've configured, integrated, or run daily</span>
+    </div>
+    <div class="stack-groups">
+      <div class="stack-group">
+        <h4>CRM &amp; Marketing Automation</h4>
+        <div class="chips"><span class="chip">HubSpot</span><span class="chip">Salesforce</span><span class="chip">LeanData</span><span class="chip">Marketo</span></div>
+      </div>
+      <div class="stack-group">
+        <h4>Sales Engagement &amp; AI</h4>
+        <div class="chips"><span class="chip">Salesloft</span><span class="chip">Outreach</span><span class="chip">Qualified</span><span class="chip">Claude</span><span class="chip">ChatGPT</span></div>
+      </div>
+      <div class="stack-group">
+        <h4>Data Enrichment &amp; Hygiene</h4>
+        <div class="chips"><span class="chip">Clay</span><span class="chip">ZoomInfo</span><span class="chip">BriteVerify</span><span class="chip">ClearOut</span><span class="chip">Zapier</span></div>
+      </div>
+      <div class="stack-group">
+        <h4>Events, Analytics &amp; Delivery</h4>
+        <div class="chips"><span class="chip">ON24</span><span class="chip">Goldcast</span><span class="chip">Tableau</span><span class="chip">Google Analytics</span><span class="chip">HubSpot Design Manager</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section id="contact" aria-labelledby="contactH" style="padding-bottom:40px;">
+    <div class="contact-box">
+      <div>
+        <span class="eyebrow" style="color:color-mix(in srgb, var(--bg) 55%, transparent);"><span class="dot"></span>OPEN TO NEW ROLES</span>
+        <h2 id="contactH">Let's talk about the system your funnel actually needs.</h2>
+        <p>Valencia, Spain · open to remote / hybrid leadership roles in<br>GTM Systems, Marketing Operations, and RevOps.</p>
+      </div>
+      <div class="contact-links">
+        <a class="primary" href="mailto:julia.korbi@outlook.com">Contact via email</a>
+        <a href="https://www.linkedin.com/in/julia-korbi" target="_blank" rel="noopener">Connect on LinkedIn ↗</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <span>© 2026 Julia Korbi — GTM Systems &amp; Marketing Operations</span>
+  <span>Built with Claude</span>
+</footer>
+
+<script>
+(function(){
+  var cards = Array.prototype.slice.call(document.querySelectorAll('#cases .card'));
+  cards.forEach(function(c){
+    var d = c.querySelector('details');
+    if(!d) return;
+    d.addEventListener('toggle', function(){
+      if(d.open){
+        cards.forEach(function(other){
+          if(other!==c){ var od = other.querySelector('details'); if(od) od.open = false; }
+        });
+      }
+    });
+  });
+})();
+</script>
+
+</body></html>
